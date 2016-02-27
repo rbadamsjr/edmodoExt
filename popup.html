@@ -3,6 +3,7 @@
   <head>
     <title>Edmodo Extension</title>
     <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="edmodo.css">
   </head>
   <body>
     <h1>Edmodo Extension</h1>
@@ -13,7 +14,12 @@
       Password:<br>
       <input type="password" name="password">
       <br/>
+      <button class="login-edmodo-button">
+        <img id="edmodo-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41205/edmodo-icon_1.png">
+        <div id="vertical-divider"></div>
+        <p>Log in with <span id="edmodo">Edmodo</span></p>
+      </button>
     </form>
-    <button id="checkPage">Log In to Edmodo!</button>
+
   </body>
 </html>

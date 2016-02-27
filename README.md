@@ -1,6 +1,9 @@
 <h1>edmodoExt</h1>
 
+
 <div>
+<p>Edmodo Developer Docs</p>
+<p>https://developers.edmodo.com/edmodo-connect/docs/</p>
 <table class="table">
 <tr>
     <td>Description</td>
@@ -9,8 +12,8 @@
 </tr>
 <tr>
     <td>Login</td>
-    <td>https://api.edmodo.com/oauth/authorize</td>
-    <td>GET</td>
+    <td>https://api.edmodo.com/oauth/authorize/sessions</td>
+    <td>POST</td>
 </tr>
 <tr>
     <td>Get messages</td>

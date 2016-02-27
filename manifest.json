@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
 
-  "name": "Edmodo Extension",
+  "name": "Edmodo Message Extension",
   "description": "This extension will allow us to send messages",
   "version": "0.1",
 

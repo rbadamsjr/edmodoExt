@@ -1,6 +1,7 @@
-  Log in with Edmodo
 
-CSS
+html, body {
+    width: 100%;
+}
 
 #edmodo-logo {
   display: inline-block;

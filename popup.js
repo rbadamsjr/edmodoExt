@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   var checkPageButton = document.getElementById('checkPage');
   checkPageButton.addEventListener('click', function() {
@@ -15,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
       f.appendChild(i);
       d.body.appendChild(f);
       f.submit();
+
+
     });
   }, false);
 }, false);

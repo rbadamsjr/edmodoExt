@@ -1,29 +1,31 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  checkPageButton.addEventListener('click', function() {
+function onPageDetailsReceived(pageDetails)  {
+    document.getElementById('username').value = pageDetails.username;
+    document.getElementById('password').value = pageDetails.password;
+}
 
-    var userName = document.getElementById('username');
-        console.log('a test');
-           var ifrm = document.getElementById('edmodoData');
-           ifrm.contentWindow.document.forms[0].username.value = username.value;
+var statusDisplay = null;
 
+function logInEdmodo(){
+// Cancel the form submit
+    event.preventDefault();
 
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
+    var username = encodeURIComponent(document.getElementById('username').value);
+    var iframe = document.getElementById('edmodoData');
 
-      var f = d.createElement('form');
-      f.action = 'http://gtmetrix.com/analyze.html?bm';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
+     statusDisplay.innerHTML = 'Saving...';
+}
 
-
+window.addEventListener('load', function(evt) {
+    // Cache a reference to the status display SPAN
+    statusDisplay = document.getElementById('status-display');
+    // Handle the bookmark form submit event with our addBookmark function
+    document.getElementById('logInEdmodo').addEventListener('click', logInEdmodo);
+    // Get the event page
+    chrome.runtime.getBackgroundPage(function(eventPage) {
+        // Call the getPageInfo function in the event page, passing in
+        // our onPageDetailsReceived function as the callback. This injects
+        // content.js into the current tab's HTML
+        eventPage.getPageDetails(onPageDetailsReceived);
     });
-  }, false);
-}, false);
+});

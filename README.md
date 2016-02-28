@@ -24,6 +24,6 @@
 </div>
 
 <div>
-<h2>Create Chrome Extension<h2>
+<h2>Create Chrome Extension</h2>
 <span>http://markb.co.uk/building-a-simple-google-chrome-extension.html</span>
 </div>

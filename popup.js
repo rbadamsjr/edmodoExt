@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var checkPageButton = document.getElementById('checkPage');
   checkPageButton.addEventListener('click', function() {
 
+    var userName = document.getElementById('username');
+        console.log('a test');
+           var ifrm = document.getElementById('edmodoData');
+           ifrm.contentWindow.document.forms[0].username.value = username.value;
+
 
     chrome.tabs.getSelected(null, function(tab) {
       d = document;

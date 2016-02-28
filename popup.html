@@ -7,18 +7,21 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-mvYjhBJXQ9VlNETV/xXShy849GsBHnKzVVudnMOcWUVM/6Nd2ksj8VNng5f8ylyX" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="edmodo.css">
     <style>
-      body { width: 350px; height: 200px;}
+      body { width: 350px; height: 180px;}
     </style>
   </head>
   <body>
-   <div>
+   <div style="padding: 25px;">
     <h3>Edmodo Extension</h3>
-    <form>
-      Email Address:<br>
-      <input type="text" class="form-control" name="emailAddress">
-      <br/>
-      Password:<br>
-      <input type="password" class="form-control" name="password">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="sr-only" for="inputEmail">Email address</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      </div>
       <br/>
       <button class="btn btn-primary btn-xs" onclick="LogMeIn()">
         <img id="edmodo-logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41205/edmodo-icon_1.png">
@@ -33,7 +36,21 @@
     <script src="//oss.maxcdn.com/angularjs/1.5.0/angular.min.js"></script>
     <script>
       var getToken = function(){
+        var websiteToken = "";
         var edmodoTokenPage = "https://api.edmodo.com/oauth/authorize/sessions/";
+        $.ajax({
+            type: "POST",
+            url: edmodoTokenPage,
+            data: null,
+            success: function(data) {
+                //function called when the server responds
+
+            }
+        }
+      };
+
+      function parseToken(htmlString){
+    
       };
     </script>
   </body>
